@@ -1,0 +1,20 @@
+name: faluchetebot
+services:
+  - name: bot
+    type: worker
+    git:
+      repository: github.com/nachoperez94/faluchetebot
+      branch: main
+    run: python bot.py
+    instance_type: free
+    regions:
+      - was
+    env:
+      - key: TELEGRAM_TOKEN
+        value: ""
+      - key: WC_URL
+        value: ""
+      - key: WC_CONSUMER_KEY
+        value: ""
+      - key: WC_CONSUMER_SECRET
+        value: ""
